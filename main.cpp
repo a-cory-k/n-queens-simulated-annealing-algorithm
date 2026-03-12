@@ -5,11 +5,10 @@
 int last = 0;
 class NQueens {
 private:
-    int size;
     // if we have board 2x2
     // and rows are:
-        // .*
-        // *.
+    // .*
+    // *.
     //where * is queen
     // then board[0] = 1 and board[1] = 0
     // index is col value is row
@@ -20,9 +19,10 @@ private:
     int n;
 public:
     NQueens(int size)
-            : n(size), board(size), bestBoard(size),
-              rng((unsigned)std::chrono::steady_clock::now().time_since_epoch().count()) {};
-
+            : board(size),
+              bestBoard(size),
+              rng((unsigned)std::chrono::steady_clock::now().time_since_epoch().count()),
+              n(size) {}
     void initState(std::vector<int> &state) {
         std::uniform_int_distribution<int> dist(0, n-1);
         for (int col = 0; col < n; col++) {
@@ -63,9 +63,9 @@ public:
         return dist(rng);
     }
     std::vector<int> simulatedAnnealing(double initialTemp = 1000.0,
-                                         double coolingRate = 0.9995,
-                                         double minTemp = 0.0001,
-                                         int maxIterations = 500000) {
+                                        double coolingRate = 0.9995,
+                                        double minTemp = 0.0001,
+                                        int maxIterations = 500000) {
         initState(board);
         bestBoard = board;
 
@@ -136,7 +136,7 @@ int main() {
     int n = 100;
     int runs = 30;
     int bestOverall = 1e9;
-
+    std::cin >> n;
     std::vector<int> bestSolution;
     int solveCount = 0;
 
