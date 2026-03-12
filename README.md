@@ -10,11 +10,12 @@ This project tackles the N-Queens puzzle, where the goal is to place N queens on
 
 - **Simulated Annealing Algorithm**: Probabilistic approach with temperature-based acceptance of suboptimal solutions
 - **Efficient Conflict Detection**: Counts row, column, and diagonal conflicts
-- **Configurable Parameters**: 
+- **Configurable Parameters**:
+  
   - Initial temperature (default: 1000.0)
   - Cooling rate (default: 0.9995)
   - Minimum temperature (default: 0.0001)
-  - Maximum iterations (default: 500,000)
+  - Maximum iterations (default: 500 000)
 - **Multiple Runs**: Executes 30 runs to measure success rate
 - **Visual Output**: Prints both array representation and ASCII chessboard
 
@@ -37,7 +38,7 @@ make
 
 ## Results
 
-Runs 30 independent trials on a 100×100 board and reports:
+Runs 30 independent trials on a n×n board and reports:
 - Success rate (% of runs achieving 0 conflicts)
 - Best overall number of conflicts found
 - Visualization of the best solution
